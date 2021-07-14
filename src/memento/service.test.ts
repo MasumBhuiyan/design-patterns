@@ -13,7 +13,7 @@ describe("UndoService", () => {
         undoService.undo();
         
         let editor:Editor = new Editor();
-        editor.set(new EditorState("T2", "B1")); 
+        editor.set(new EditorState("T1", "B1")); 
         expect(undoService.getEditor()).toMatchObject(editor);
     });
 });
