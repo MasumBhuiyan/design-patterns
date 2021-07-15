@@ -1,3 +1,4 @@
+import { BrushTool } from "./BrushTool";
 import { Tool } from "./Tool";
 
 export class Canvas {

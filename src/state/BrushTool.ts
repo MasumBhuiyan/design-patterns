@@ -1,7 +1,7 @@
 import { Tool } from "./Tool";
 
 export class BrushTool implements Tool {
-    mouseUp():string {
+    public mouseUp():string {
         return "Brush tool: mouse up";
     }
 
