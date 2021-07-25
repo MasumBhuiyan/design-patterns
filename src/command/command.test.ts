@@ -1,4 +1,5 @@
 import { AddCustomerCommand } from "./AddCustomerCommand";
+import { DeleteCustomerCommand } from "./DeleteCustomerCommand";
 import { Button } from "./framework/Button";
 import { CustomerService } from "./CustomerService";
 import { BoldCommand } from './editor/BoldCommand';
@@ -9,8 +10,19 @@ describe("Command pattern", () => {
     it("should return added a customer", () => {
         const customerService = new CustomerService();
         const command = new AddCustomerCommand(customerService);
-        const button = new Button("Add customer button", command);
-        expect(button.onClik()).toBe("customer added");
+        const addButton = new Button("Add customer button", command);
+
+
+        expect(addButton.onClik()).toBe("customer added");
+    });
+
+    it("should return deleted a customer", () => {
+        const customerService = new CustomerService();
+        const command = new DeleteCustomerCommand(customerService);
+        const deleteButton = new Button("Add customer button", command);
+
+
+        expect(deleteButton.onClik()).toBe("customer deleted");
     });
 
     it("undoable command", () => {
